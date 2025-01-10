@@ -1,0 +1,110 @@
+@charset "utf-8";
+//  SCSS  PRACTICE (연습)
+//  2024-12-16  first try.
+
+// (미포함)하위 요소는 함수처럼 쓸 수가 있음.
+@mixin fn-css-args($prop, $num){
+  #{$prop}: $num;
+}
+
+// (포함)하위 요소는 함수처럼 쓸 수가 있음.
+@mixin fn-css-with-args($prop, $num){
+  #{$prop}: $num;
+  @content;
+}
+
+// position 지정 및 위치 배정
+@mixin fn-position-with-args($position, $top, $right, $bottom, $left){
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  @content;
+}
+
+// position 지정 및 위치 2곳 배정
+@mixin fn-position-with-five-args($position, $first-location, $one
+                                            , $second-location, $two){
+  position: $position;
+  #{$first-location}: $one;
+  #{$second-location}: $two;
+  @content;
+}
+
+// position 지정 및 위치 배정
+@mixin fn-position-with-top-args($position, $top){
+  position: $position;
+  top: $top;
+  @content;
+}
+
+// padding/margin 등 4자리 수정
+@mixin fn-space-with-five-args($space-type, $top, $right, $bottom, $left) {
+  #{$space-type}-top: $top;
+  #{$space-type}-right: $right;
+  #{$space-type}-bottom: $bottom;
+  #{$space-type}-left: $left;
+  @content;
+}
+
+// padding/margin 등 1자리 수정
+@mixin fn-space-with-three-args($space-type, $space-location, $one) {
+  #{$space-type}-#{$space-location}: $one;
+  @content;
+}
+
+// @mixin : 재사용이 가능한 스타일을 정의하는데 사용되는 선언.
+@mixin font-decorate($weight, $size, $color){ // font 설정
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+}
+
+// @mixin : 재사용이 가능한 스타일을 정의하는데 사용되는 선언.
+@mixin font-family-decorate($family, $weight, $size, $color){ // font 설정
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+}
+
+// width랑 height 100%
+@mixin wh-p100{
+  width: 100%;
+  height: 100%;
+  @content;
+}
+
+// width랑 height 100%
+@mixin wh-p($width, $height){
+  width: $width;
+  height: $height;
+  @content;
+}
+
+// width && margin : 0 auto;
+@mixin w-margin-center($width){
+  width: $width;
+  margin: 0 auto;
+  @content;
+}
+
+// height && margin : 0 auto;
+@mixin h-margin-center($height){
+  height: $height;
+  margin: auto 0;
+  @content;
+}
+
+// width 100%
+@mixin w-p100{
+  width: 100%;
+  @content;
+}
+
+// height 100%
+@mixin h-p100{
+  height: 100%;
+  @content;
+}

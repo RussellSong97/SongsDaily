@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout_pc}">
+<head>
+    <!-- js 혹은 css 영역 -->
+    <!-- / js 혹은 css 영역 -->
+</head>
+<body>
+    <th:block th:if="${isMobile.equals('pc')}">
+        <header th:replace="~{/fragments/header :: headerPC}"></header>
+        <main th:replace="~{/main/main :: mainPC}"></main>
+        <footer th:replace="~{/fragments/footer :: footerPC}"></footer>
+    </th:block>
+    <th:block th:if="${isMobile.equals('tablet')}">
+        <header th:replace="~{/fragments/header :: headerTablet}"></header>
+        <main th:replace="~{/main/main :: mainTablet}"></main>
+        <footer th:replace="~{/fragments/footer :: footerTablet}"></footer>
+    </th:block>
+    <th:block th:if="${isMobile.equals('mobile')}">
+        <header th:replace="~{/fragments/header :: headerMobile}"></header>
+        <main th:replace="~{/main/main_m :: mainMobile}"></main>
+        <footer th:replace="~{/fragments/footer :: footerMobile}"></footer>
+    </th:block>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="headerPC" id="pc_header">
+    <div id="pc_h_flex">
+        <div id="pc_h_grid">
+            <div id="pc_h_logo">
+                <span class="header-logo">SONG'S DAILY</span>
+            </div>
+            <div id="pc_h_nav">
+                <ul class="header-nav">
+                    <li class="header-nav-li header-nav1"><a href="#"><span>
+                        PORTFOLIO
+                    </span></a></li>
+                    <li class="header-nav-li header-nav2"><a href="#"><span>
+                        LOGIN
+                    </span></a></li>
+                    <li class="header-nav-li header-nav3"><a href="#"><span>
+                        STUDY
+                    </span></a></li>
+                </ul>
+            </div>
+<!--            <div id="pc_h_search">
+                <div id="header-search">컴터 헤더 검색란</div>
+            </div>-->
+        </div>
+    </div>
+</header>
+<header th:fragment="headerTablet" id="tb_header">
+    <div id="tb_h_header" class="display-grid-col-3">
+
+    </div>
+    헤더 타블렛 파트입니다
+</header>
+<header th:fragment="headerMobile" id="mb_header">
+    <div id="mb_h_header" class="display-grid-col-3">
+
+    </div>
+    헤더 모바일 파트입니다
+</header>
+</html>

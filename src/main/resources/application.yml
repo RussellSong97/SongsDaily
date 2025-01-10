@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: jooree
+  web:
+    resources:
+      add-mappings: true
+  mvc:
+    static-path-pattern: /resources/**
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    enabled: true
+server:
+  port: 8081
+  error:
+    whitelabel:
+      enabled: false

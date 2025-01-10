@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<!--
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/layout_main}"
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SONG'S DAILY</title>
+    
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/common-layout.css(ver=${#temporals.createNow()})}" />-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/general.css(ver=${#temporals.createNow()})}" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.6.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+
+    <!--
+        <style>
+            div{border:1px solid gray;}
+        </style>
+    -->
+</head>
+<body>
+<th:block th:if="${isMobile.equals('pc')}">
+    <header th:replace="~{/fragments/header :: headerPC}"></header>
+    <main th:replace="~{/main/main :: mainPC}"></main>
+    <footer th:replace="~{/fragments/footer :: footerPC}"></footer>
+</th:block>
+<th:block th:if="${isMobile.equals('tablet')}">
+    <header th:replace="~{/fragments/header :: headerTablet}"></header>
+    <main th:replace="~{/main/main :: mainTablet}"></main>
+    <footer th:replace="~{/fragments/footer :: footerTablet}"></footer>
+</th:block>
+<th:block th:if="${isMobile.equals('mobile')}">
+    <header th:replace="~{/fragments/header :: headerMobile}"></header>
+    <main th:replace="~{/main/main_m :: mainMobile}"></main>
+    <footer th:replace="~{/fragments/footer :: footerMobile}"></footer>
+</th:block>
+</body>
+</html>

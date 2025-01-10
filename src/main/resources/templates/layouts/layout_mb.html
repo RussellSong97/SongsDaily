@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SONG'S DAILY</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/general.css(ver=${#temporals.createNow()})}" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.6.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: headerMobile}"></header>
+    <main layout:fragment="mainMobile"></main>
+    <footer th:replace="~{/fragments/footer :: footerMobile}"></footer>
+</body>
+</html>
